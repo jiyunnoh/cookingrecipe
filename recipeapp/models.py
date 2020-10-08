@@ -60,10 +60,10 @@ class Occassion(models.Model):
 
 #rating model
 class Rating(models.Model):
-    ratingstar=models.SmallIntegerField
+    ratingstar=models.SmallIntegerField(null=True, blank=True)
 
     def __str__(self):
-        return self.ratingstar
+        return str(self.ratingstar)
 
     class Meta:
         db_table='rating'

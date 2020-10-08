@@ -10,7 +10,7 @@
  </tr>
  {% for t in recipe_list %}
    <tr>
-       <td>{{ t.recipename }}</td>
+       <td><a href="{% url 'recipedetails' id=t.id %}">{{ t.recipename }}</a></td>
        <td>{{ t.recipedescription }}</td>
    </tr>
 
