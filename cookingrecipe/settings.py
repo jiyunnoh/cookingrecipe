@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'cookingrecipe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'recipeappdb',
+        'NAME': 'cookingrecipe',
         'USER' : 'postgres',
-        'PASSWORD': 'Welcome1.',
+        'PASSWORD': 'P@ssw0rd1',
         'HOST' :'localhost',
         'PORT' :'',
     }
