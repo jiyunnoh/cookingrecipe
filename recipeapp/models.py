@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.postgres.fields import IntegerRangeField
 
 # Create your models here.
 
@@ -60,7 +61,7 @@ class Occassion(models.Model):
 
 #rating model
 class Rating(models.Model):
-    ratingstar=models.SmallIntegerField(null=True, blank=True)
+    ratingstar=models.IntegerRangeField(min_value=1, max_value=5, null=True, blank=True)
 
     def __str__(self):
         return str(self.ratingstar)
@@ -76,9 +77,9 @@ class Recipe(models.Model):
     recipeinstruction = models.TextField()
     servingsize = models.SmallIntegerField(null=True, blank=True)
     image = models.ImageField(upload_to='uploads/', null=True, blank=True)
-    preptime = models.TimeField()
-    cooktime = models.TimeField()
-    totaltime = models.TimeField()
+    preptime = models.CharField(max_length=11)
+    cooktime = models.CharField(max_length=11)
+    totaltime = models.CharField(max_length=11)
     difficulty = models.ForeignKey(Difficulty, on_delete=models.CASCADE)
     user=models.ForeignKey(User, on_delete=models.DO_NOTHING)
     dietary = models.ManyToManyField(Dietary)
