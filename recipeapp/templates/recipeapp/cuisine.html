@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--This is a comment-->
+
+<h1>Cuisine</h1>
+<table class='table'>
+ <tr>
+     <th>Name</th>
+ </tr>
+ {% for t in cuisine_list %}
+   <tr>
+       <td>{{ t.cuisinename }}</td>
+   </tr>
+
+ {% endfor %}
+
+
+</table>
+
+{%  endblock %}

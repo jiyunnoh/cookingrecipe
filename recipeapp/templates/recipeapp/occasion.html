@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--This is a comment-->
+
+<h1>Occasion</h1>
+<table class='table'>
+ <tr>
+     <th>Name</th>
+ </tr>
+ {% for t in occasion_list %}
+   <tr>
+       <td>{{ t.occassiontype }}</td>
+   </tr>
+
+ {% endfor %}
+
+
+</table>
+
+{%  endblock %}
