@@ -10,4 +10,5 @@ urlpatterns=[
     path('dietary/', views.getdietary, name='dietary'),
     path('cuisine/', views.getcuisine, name='cuisine'),
     path('dishtype/', views.getdishtype, name='dishtype'),
+    path('newRecipe/', views.newRecipe, name='newrecipe'),
 ]
