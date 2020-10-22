@@ -40,7 +40,13 @@ def getoccasion(request):
     return render(request, 'recipeapp/occasion.html', {'occasion_list' : occasion_list})
 
 
-#@login required
+def loginmessage(request):
+    return render(request, 'recipeapp/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'recipeapp/logoutmessage.html')
+
+@login required
 def newRecipe(request):
     form=RecipeForm
     if request.method=='POST':
@@ -52,3 +58,4 @@ def newRecipe(request):
     else:
         form=RecipeForm()
     return render(request, 'recipeapp/newrecipe.html', {'form': form})
+
