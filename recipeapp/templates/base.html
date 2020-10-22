@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <title>RecipeApp</title>
+        <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+        <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+        <!-- star rating above -->
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -21,6 +25,7 @@
                 <!-- category : contains the other models-->
                 <a class="navbar-brand" href="{% url 'category' %}">Categories</a>
                 <!-- favorites *only logged in users* -->
+                <a class="navbar-brand" href="{% url 'newrecipe' %}">Add Recipe</a>
                 </div>
                 <ul class="nav navbar-nav">
                    

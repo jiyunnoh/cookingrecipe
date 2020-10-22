@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Cuisine, Dietary, Difficulty, DishType, Occassion, Rating, Recipe, Review, Comment, Ingredient, Favorite
+from .forms import RecipeForm
+# from django.contrib.auth.decorators import login_required'
 
 # Create your views here.
 def index (request):
@@ -37,8 +39,23 @@ def getoccasion(request):
     occasion_list=Occassion.objects.all()
     return render(request, 'recipeapp/occasion.html', {'occasion_list' : occasion_list})
 
+
 def loginmessage(request):
     return render(request, 'recipeapp/loginmessage.html')
 
 def logoutmessage(request):
     return render(request, 'recipeapp/logoutmessage.html')
+
+@login required
+def newRecipe(request):
+    form=RecipeForm
+    if request.method=='POST':
+        form=RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            post=form.save(commit=True)
+            post.save()
+            form=RecipeForm
+    else:
+        form=RecipeForm()
+    return render(request, 'recipeapp/newrecipe.html', {'form': form})
+

@@ -22,4 +22,6 @@ from django.conf.urls.static import static   # + static(settings.MEDIA_URL, docu
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipeapp/', include('recipeapp.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings'), name='ratings'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
