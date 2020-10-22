@@ -36,3 +36,9 @@ def getdishtype(request):
 def getoccasion(request):
     occasion_list=Occassion.objects.all()
     return render(request, 'recipeapp/occasion.html', {'occasion_list' : occasion_list})
+
+def loginmessage(request):
+    return render(request, 'recipeapp/loginmessage.html')
+
+def logoutmessage(request):
+    return render(request, 'recipeapp/logoutmessage.html')
