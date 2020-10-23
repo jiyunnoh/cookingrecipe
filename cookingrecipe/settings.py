@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'star_ratings',
     'recipeapp',
 ]
 
@@ -80,9 +81,9 @@ WSGI_APPLICATION = 'cookingrecipe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cookingrecipe',
+        'NAME': 'recipeappdb',
         'USER' : 'postgres',
-        'PASSWORD': 'P@ssw0rd1',
+        'PASSWORD': 'Welcome1.',
         'HOST' :'localhost',
         'PORT' :'',
     }

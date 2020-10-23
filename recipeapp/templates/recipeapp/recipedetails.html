@@ -25,6 +25,8 @@
 {% for occassiontype in recipe.occassion.all %}
     <p>Occassion: {{ occassiontype }}</p>
 {% endfor %}
-<p>No. Of Reviews: {{ reviews }}</p>
+
+<p>No. Of Reviews: <a href= "{% url 'reviewdetails' %}">{{ reviews }}</a> </p>
+
 
 {% endblock %}

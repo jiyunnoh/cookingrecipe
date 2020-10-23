@@ -61,7 +61,7 @@ class Occassion(models.Model):
 
 #rating model
 class Rating(models.Model):
-    ratingstar=models.SmallIntegerField(null=True, blank=True)
+    ratingstar=models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return str(self.ratingstar)
